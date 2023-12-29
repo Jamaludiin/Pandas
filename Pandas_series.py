@@ -17,7 +17,7 @@ var_series_tuple = pd.Series(var_tuple)
 
 
 print(var_series_list) # it gives column id and data is represented in a clunm manner
-#print(var_series_set)
+#print(var_series_set) # dont print
 print(var_series_tuple)
 
 
