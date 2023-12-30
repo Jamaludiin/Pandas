@@ -17,6 +17,8 @@ var_series_data = pd.Series(var_dic_data)
 
 print(var_series_data)
 
+# indexing specific data in series/column
+print(var_series_data["Score 5"])
 #--------------------------------------------------------------------------------------------------------------------
 # THIS IS DATAFRAME
 var_dic_data = {
@@ -39,3 +41,10 @@ var_data_frame = pd.DataFrame(var_dic_data, index= (1,2,3,4,5,6)) # you can do l
 print(var_data_frame)
 
 #--------------------------------------------------------------------------------------------------------------------
+# indexing specific row in dataframe. so you cannot use the [index number] instead use the loc
+print("\nlocating data or row data")
+print(var_data_frame.loc[1]) # Note: This example returns a Pandas Series.
+
+# return row 1 and 2
+print(var_data_frame.loc[[1, 2]]) # Note: When using [], the result is a Pandas DataFrame.
+
