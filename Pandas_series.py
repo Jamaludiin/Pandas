@@ -55,3 +55,9 @@ Slary = {"Month 1": 2000, "Month 2": 4000, "Month 3": 5000}
 show_my_salary = pd.Series(Slary)
 
 print(show_my_salary)
+
+# display some of the salaries using index parameter
+show_some_salary = pd.Series(show_my_salary, index = ("Month 1", "Month 3"))
+print(show_some_salary)
+
+#--------------------------------------------------------------------------------------------------------------------
