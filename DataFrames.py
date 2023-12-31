@@ -74,3 +74,36 @@ print("\nMy Pandas return the maximum rows option in the stting is")
 print(pd.options.display.max_rows) 
 
 #--------------------------------------------------------------------------------------------------------------------
+# Increase the maximum number of rows to display the entire DataFrame:
+pd.options.display.max_rows = 2000
+
+display_data = pd.read_csv('/Users/jamalabdullahi/Python Tutorial/Pandas/data.csv')
+print("\Display the data")
+print(display_data)
+
+print("\nIncreasing the max_rows")
+print(pd.options.display.max_rows) 
+
+
+#--------------------------------------------------------------------------------------------------------------------
+# The head() method returns the headers and a specified number of rows, starting from the top.
+print("\nThe first ten rows")
+print(display_data.head(10))
+
+# if you dont specify any parameter it will return the first five rows
+print("\nThe first five rows")
+print(display_data.head())
+
+#--------------------------------------------------------------------------------------------------------------------
+# There is also a tail() method for viewing the last rows of the DataFrame.
+print("\nThe last five rows")
+print(display_data.tail())
+
+print("\nThe last ten rows")
+print(display_data.tail(10))
+
+#--------------------------------------------------------------------------------------------------------------------
+# Info About the Data
+print("\nInfo about the data")
+print(display_data.info())
+
