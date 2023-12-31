@@ -24,7 +24,7 @@ print(var_series_data["Score 5"])
 var_dic_data = {
     "Score 1": [90,33,55,66,88,99], # NOTE THE DATA MUST BE THE SAME LENGHT IN EACH ROW N COLUMN, OTHERWISE IT WILL TRIGER AN ERROR
     "Score 2": [100,99,88,55,77,56],
-    "Score 4": [93,44,89,56,87,43],
+    "Score 4": [93,44,89,56,87,43],# if they have two ids the last one will be stored
     "Score 4": [84,45,76,63,83,82],
     "Score 5": [55,12,76,84,75,79]
 }
@@ -43,8 +43,34 @@ print(var_data_frame)
 #--------------------------------------------------------------------------------------------------------------------
 # indexing specific row in dataframe. so you cannot use the [index number] instead use the loc
 print("\nlocating data or row data")
-print(var_data_frame.loc[1]) # Note: This example returns a Pandas Series.
+print(var_data_frame.loc[1]) # Note: This example returns a Pandas Series. means the row will be converted to colunm
 
 # return row 1 and 2
 print(var_data_frame.loc[[1, 2]]) # Note: When using [], the result is a Pandas DataFrame.
 
+
+#--------------------------------------------------------------------------------------------------------------------
+# Load data from csv file using the read_csv()
+print("\n")
+var_csv_data = pd.read_csv('/Users/jamalabdullahi/Python Tutorial/Pandas/data.csv')
+
+print(var_csv_data)
+
+#--------------------------------------------------------------------------------------------------------------------
+print("\nPrinting the entire data in the dataframe using to_string")
+print(var_csv_data.to_string()) 
+
+#--------------------------------------------------------------------------------------------------------------------
+# max_rows
+"""
+The number of rows returned is defined in Pandas option settings.
+
+You can check your system's maximum rows with the pd.options.display.max_rows statement.
+
+In my system the number is 60, which means that if the DataFrame contains more than 60 rows, 
+the print(df) statement will return only the headers and the first and last 5 rows.
+"""
+print("\nMy Pandas return the maximum rows option in the stting is")
+print(pd.options.display.max_rows) 
+
+#--------------------------------------------------------------------------------------------------------------------
