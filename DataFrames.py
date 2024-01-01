@@ -107,3 +107,5 @@ print(display_data.tail(10))
 print("\nInfo about the data")
 print(display_data.info())
 
+print("\nIt can also display without using the print function\n")
+display_data.info()
