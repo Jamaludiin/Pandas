@@ -109,3 +109,4 @@ print(display_data.info())
 
 print("\nIt can also display without using the print function\n")
 display_data.info()
+

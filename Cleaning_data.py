@@ -125,4 +125,3 @@ print(var_csv_data["Calories"].fillna(mode_calories_filled, inplace=True))
 
 print(var_csv_data["Calories"].to_string())
 print("The Mode is",mode_calories_filled)
-
