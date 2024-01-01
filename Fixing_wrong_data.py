@@ -39,3 +39,37 @@ print("\nlreturn row 1 and 2 using loc[[1,2]]")
 # return row 1 and 2
 print(var_csv_data.loc[[1, 2]]) # Note: When using [], the result is a Pandas DataFrame.
 
+
+#--------------------------------------------------------------------------------------------------------------------
+# lets change some values and fix again using the same
+var_csv_data = pd.read_csv('/Users/jamalabdullahi/Python Tutorial/Pandas/data.csv')
+print(var_csv_data.head(10))
+
+var_csv_data.loc[9, 'Duration'] = 400 # instead of 60
+var_csv_data.loc[2, 'Duration'] = 500 # instead of 60
+var_csv_data.loc[5, 'Duration'] = 590 # instead of 60
+var_csv_data.loc[6, 'Duration'] = 456 # instead of 60
+
+print("\nBefore correction")
+print(var_csv_data.head(10))
+
+# fix using lopp
+for i in var_csv_data.index:
+  if var_csv_data.loc[i, "Duration"] >= 400:
+    var_csv_data.loc[i, "Duration"] = 60
+
+print("\nAfter correction")
+print(var_csv_data.head(10))
+
+#--------------------------------------------------------------------------------------------------------------------
+# looping single column value
+print("\nBefore correction")
+
+# fix using lopp
+k = 0
+for i in var_csv_data.index:
+  print(var_csv_data.loc[i, "Duration"])
+  k = k + 1
+
+print("the the number of rows",k)
+var_csv_data.info() # check all infor and see if the k value match the duration colunm count or total rows number
