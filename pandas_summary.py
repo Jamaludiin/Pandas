@@ -28,10 +28,69 @@ pd.options.display.max_rows = 2000
 # access data from csv file using the read_csv(path and the file) method
 display_data = pd.read_csv('/Users/jamalabdullahi/Python Tutorial/Pandas/data.csv')
 
+#--------------------------------------------------------------------------------------------------------------------
 # diplay top ten dataframes in the csv file using the head(), by default is 5, but you can specify the number
 print(display_data.head(10))
 
+#--------------------------------------------------------------------------------------------------------------------
 # dislpaying the last 10 rows of the data using the tail, is option to specify the 10 or more
 print(display_data.tail(10))
 
-# 
+#--------------------------------------------------------------------------------------------------------------------
+# you can display information about the data using info()
+display_data.info()
+
+#--------------------------------------------------------------------------------------------------------------------
+# printing specific row
+row_index = 2
+specific_row = display_data.iloc[row_index]
+
+# return row 1 and 2
+print(display_data.loc[[1, 2]]) # Note: When using [], the result is a Pandas DataFrame.
+
+#--------------------------------------------------------------------------------------------------------------------
+# printing a specific column values using lopp
+for i in display_data.index:
+  print(display_data.loc[i, "Duration"])
+
+#--------------------------------------------------------------------------------------------------------------------
+# print the duplicates, this return true if that rows has duplicate similar
+print(display_data.duplicated()) 
+
+# drop duplicates
+display_data.drop_duplicates(inplace = True)
+
+#--------------------------------------------------------------------------------------------------------------------
+# replacing the empty cells using median, mean or mode etc
+# replaces the nan value to avoid string value to be converted to int
+# median
+median_calories_filled = display_data["Calories"].median()
+display_data["Calories"].fillna(median_calories_filled, inplace=True)
+
+# mean
+mean_calories_filled = display_data["Calories"].mean()
+display_data.fillna(mean_calories_filled,inplace=True)
+
+# mode
+mode_calories_filled = display_data["Calories"].mode()[0]
+print(display_data["Calories"].fillna(mode_calories_filled, inplace=True))
+
+#--------------------------------------------------------------------------------------------------------------------
+#convert the colories column data into int
+display_data['Calories'] = display_data['Calories'].astype(int)
+
+#--------------------------------------------------------------------------------------------------------------------
+# lets do some  intentional data manipulation and then remove these rows
+display_data.loc[9, 'Duration'] = 400 # instead of 60
+
+#--------------------------------------------------------------------------------------------------------------------
+# this is the removal process, using loop
+for x in display_data.index:
+  if display_data.loc[x, "Duration"] >= 400:
+    display_data.drop(x, inplace = True)
+
+#--------------------------------------------------------------------------------------------------------------------
+# assign new values when such condition match, e.g minimizing the extreme values
+for i in display_data.index:
+  if display_data.loc[i, "Duration"] >= 400:
+    display_data.loc[i, "Duration"] = 60
