@@ -48,4 +48,64 @@ print(var_array_list)
 print(var_array_set)
 print(var_array_tuple)
 
+#--------------------------------------------------------------------------------------------------------------------
+# check the type of the array 
+print("Checking the array type",type(np.array(var_array_list))) # all are <class 'numpy.ndarray'>
+print("Checking the array type",type(np.array(var_array_set))) # all are <class 'numpy.ndarray'>
+print("Checking the array type",type(var_array_tuple)) # or like this is ok
 
+#--------------------------------------------------------------------------------------------------------------------
+# Array Dimensions in NumPy
+#---------------------------------
+#1: 0-D Arrays
+    #0-D arrays, or Scalars, are the elements in an array. Each value in an array is a 0-D array.
+    #you can only store single value
+print("\n0-D Arrays")
+print(np.array(33))
+# print(np.array(33,44,44,5,6)) # is this also zero dimentional arrays, no this will be error
+# error of the above line is : TypeError: array() takes from 1 to 2 positional arguments but 5 were given
+
+#---------------------------------
+#2: 1-D Arrays
+    # An array that has 0-D arrays as its elements is called uni-dimensional or 1-D array.
+    # in 1-D array you can store multiple values seperated by comma e.g. 22,33,44,55,66 etc
+print("\n1-D Arrays")
+print(np.array([33,44,66,77,88,99,22,11]))
+
+#---------------------------------
+#2: 2-D Arrays
+    # An array that has 1-D arrays as its elements is called a 2-D array.
+    # These are often used to represent matrix or 2nd order tensors.
+print("\n2-D Arrays")
+print(np.array([[1,2,3,4],[5,6,7,8]]))
+print("\n2-D Arrays scond example")
+print(np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])) # what about this, is also works
+
+#---------------------------------
+#3: 3-D Arrays
+    # An array that has 2-D arrays (matrices) as its elements is called 3-D array.
+    # These are often used to represent a 3rd order tensor.
+print("\n3-D Arrays")
+print(np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]]))
+
+#---------------------------------
+# How to Check the Number of array Dimensions
+    # use the ndim attribute 
+
+print("\nChecking the number of dimentions in 0-D Arrays")
+check_array_dim = np.array(33).ndim
+print(check_array_dim)
+
+print("\nChecking the number of dimentions in 1-D Arrays")
+print(np.array([33,44,66,77,88,99,22,11]).ndim)
+
+print("\nChecking the number of dimentions in 2-D Arrays")
+print(np.array([[1,2,3,4],[5,6,7,8]]).ndim)
+print("\nChecking the number of dimentions in 2-D Arrays scond example")
+print(np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]).ndim)
+
+print("\nChecking the number of dimentions in 3-D Arrays")
+print(np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]]).ndim)
+
+
+#--------------------------------------------------------------------------------------------------------------------
