@@ -109,3 +109,11 @@ print(np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]]).ndim)
 
 
 #--------------------------------------------------------------------------------------------------------------------
+# Higher Dimensional Arrays
+# the beuty of array is that it have any number of dimentions
+# When the array is created, you can define the number of dimensions by using the ndmin argument and pass the number you want.
+print("\nThis is a higher dimentional array")
+print(np.array([[[[[1, 2, 3],[1, 2, 3],[1, 2, 3],[1, 2, 3],[1, 2, 3]]]]], ndmin=5)) # you created array with 5 dimentions fully specified
+
+print("\nChecking the higher dimentional arrays")
+print(np.array([[[[[1, 2, 3],[1, 2, 3],[1, 2, 3],[1, 2, 3],[1, 2, 3]]]]], ndmin=5).ndim)
