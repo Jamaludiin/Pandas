@@ -117,3 +117,22 @@ print(np.array([[[[[1, 2, 3],[1, 2, 3],[1, 2, 3],[1, 2, 3],[1, 2, 3]]]]], ndmin=
 
 print("\nChecking the higher dimentional arrays")
 print(np.array([[[[[1, 2, 3],[1, 2, 3],[1, 2, 3],[1, 2, 3],[1, 2, 3]]]]], ndmin=5).ndim)
+
+
+#--------------------------------------------------------------------------------------------------------------------
+# How to index NumPy arrays
+var_array = np.array([10, 33, 44, 46])
+
+print("\nA0-dimentiional Array is indexed")
+print(var_array[0])
+print(var_array[2] + var_array[3]) # combines both values after indexed 44+46
+
+#--------------------------------------------------------------------------------------------------------------------
+# looping array value through their index
+for i in var_array:
+    print(i)
+
+#--------------------------------------------------------------------------------------------------------------------
+# indexing 2-D Arrays
+var_array_2d = np.array([[1,2,3,4,5], [6,7,8,9,10]])
+print('\n2nd element on 1st row: ', var_array_2d[0, 1])
