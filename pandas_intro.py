@@ -43,3 +43,7 @@ print("\nUSING DATAFRAME\n\n",var_show)
 
 #ok
 #--------------------------------------------------------------------------------------------------------------------
+
+# display using the dataframe 
+var_show = pd.Series(my_data_dic) # it gives id each row as it diplays like tablle data while the above does not
+print("\nUSING series\n\n",var_show)

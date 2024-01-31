@@ -97,3 +97,15 @@ print("\nAfter removal rows")
 print(var_csv_data.head(10))
 
 #--------------------------------------------------------------------------------------------------------------------
+# display the column names
+print()
+
+for i in var_csv_data:
+    print(i)
+
+print()
+# display the column first letter of their names
+colmn_index = 0
+for i in var_csv_data:
+  print("Column",i[colmn_index])
+  colmn_index +=1
